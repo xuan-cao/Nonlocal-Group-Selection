@@ -5,9 +5,7 @@ SSS = function(X,y,ind_fun, #g.size,
   #p = ncol(X)
   #p = ncol(X)/g.size
   p = length(unique(colnames(X)))  ### number of group
-  #tau = 0.072
-  #tau = n^(-1/2*(r+1/2))*p^(2+2*delta)
-  tau = min(1, n^(-1)*r^(2+2*delta))
+  tau = min(1, delta*(n^(-1)*p^(2+2*0.0001))^(1/(r+1/2)))
   
   requireNamespace("Matrix")
   requireNamespace("abind")
